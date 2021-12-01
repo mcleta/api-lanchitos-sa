@@ -8,11 +8,11 @@ app.use(express.json())
 app.listen(process.env.PORT || 3000, () => console.log(`Server's up in door ${process.env.PORT}`));
 
 app.get("/mensagens", function(request, response){
+  const {email} = request.headers
   response.status(200).json(
     {
       "messages": [
-        {"text": "Welcome to the Chatfuel Rockets!"},
-        {"text": "What are you up to?"}
+        {"text": `Seu email é: ${email}` }
       ]
    }
    );
