@@ -1,0 +1,19 @@
+{
+  "name": "chatbot-chatfuel",
+  "version": "1.0.0",
+  "description": "BackEnd from Lanchitos S.A. chatbots",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js"
+  },
+  "author": "Murillo C Leta",
+  "license": "ISC",
+  "dependencies": {
+    "chatfuel-api": "^2.1.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
