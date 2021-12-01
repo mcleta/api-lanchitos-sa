@@ -6,13 +6,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon ./index.js",
-    "start": "node ./index.js",
-    "addgit": "git add ."
+    "start": "node ./index.js"
   },
   "author": "Murillo C Leta",
   "license": "ISC",
   "dependencies": {
     "chatfuel-api": "^2.1.0",
+    "consign": "^0.1.6",
     "express": "^4.17.1"
   },
   "devDependencies": {
