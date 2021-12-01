@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json())
 
-app.listen(process.env.PORT || 3000, () => console.log(`Server's up in door 3000`));
+app.listen(process.env.PORT || 3000, () => console.log(`Server's up in door ${process.env.PORT}`));
 
 app.get("/mensagens", function(request, response){
   response.status(200).json(
