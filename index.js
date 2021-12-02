@@ -15,7 +15,6 @@ app.get("/name", function(request, response){
     {
       "messages": [
         {"text": `Olá ${name}!`},
-        {"text": `Didite "sair" a qualquer momento para encerrar o chat.`}
       ]
    }
   );
