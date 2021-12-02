@@ -45,6 +45,8 @@ app.get('/endereco', function(request, response){
 });
 
 app.get('/test', function(req, res){
+  const {dec} = req.headers;
+
   res.status(200).json(
     {
       "messages": [
@@ -54,12 +56,14 @@ app.get('/test', function(req, res){
             {
               "title": "Number 1",
               "set_attributes": {
-                "number": "1"
+                'dec': `${dec = true}`
               }
             },
             {
               "title": "Number 2",
-              "redirect_to_blocks": ["CabouCedo", "Default Answer"]
+              "set_attributes": {
+                'dec': `${dec = false}`
+              }
             }
           ]
         }
