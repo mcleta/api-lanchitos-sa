@@ -59,15 +59,9 @@ app.get('/test', function(req, res){
             },
             {
               "title": "Number 2",
-              "set_attributes": {
-                "number": `2 ${console.log(222)}`
-              }
+              "redirect_to_blocks": ["CabouCedo", "Default Answer"]
             }
-          ],
-          "quick_reply_options": {
-            "process_text_by_ai": false,
-            "text_attribute_name": "user_message"
-          }
+          ]
         }
       ]
     }
