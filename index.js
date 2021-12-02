@@ -1,4 +1,6 @@
 const express = require('express');
+const clientes = require('./fakedb');
+const pessoas = require('./fakedb')
 
 const app = express();
 
@@ -12,7 +14,8 @@ app.get("/name", function(request, response){
   response.status(200).json(
     {
       "messages": [
-        {"text": `Olá ${name}!`}
+        {"text": `Olá ${name}!`},
+        {"text": `Didite "sair" a qualquer momento para encerrar o chat.`}
       ]
    }
   );
@@ -25,46 +28,32 @@ app.get('/pedido', function(request, response){
     {
       "messages": [
         {"text": `Ok!`},
-        {"text": `Confirma o pedido?`},
-        {"text": `${pedido}`}
+        {"text": `Pedido recebido`}
       ]
    }
   );
 });
 
-// Rota Endereço
-app.get('/endereco', function(request, response){
-  const {endereco} = request.headers;
-  response.status(200).json(
+// Rota para cadartrar cliente
+app.post('/cadastro', function(req, res){
+  const { fullname, endereco, tell, pedido } = req.body;
+
+  clientes.push({
+    "id": clientes.length + 1,
+    "dados": {
+      fullname, 
+      endereco,
+      tell, 
+    },
+    pedido
+  });
+
+  res.status(201).json(
     {
       "messages": [
-        {"text": `Ok!`}
+        {"text": `Cadastro feito!!!`}
       ]
    }
   );
-});
-
-app.get('/test', function(req, res){
-  const {dec} = req.headers;
-
-  res.status(200).json(
-    {
-      "messages": [
-        {
-          "text":  "Did you enjoy the last game of the CF Rockets?",
-          "quick_replies": [
-            {
-              "title":"Loved it!",
-              "block_names": ["Block 1", "Block 2"]
-            },
-            {
-              "title":"Not really...",
-              "url": "https://rockets.chatfuel.com/api/sad-match",
-              "type":"json_plugin_url"
-            }
-          ]
-        }
-      ]
-    }
-  );
+  
 });
