@@ -27,7 +27,8 @@ app.get('/pedido', function(request, response){
     {
       "messages": [
         {"text": `Ok!`},
-        {"text": `Pedido recebido`}
+        {"text": `Pedido recebido.`},
+        {"text": `${pedido}`}
       ]
    }
   );
