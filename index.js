@@ -49,18 +49,25 @@ app.get('/test', function(req, res){
     {
       "messages": [
         {
-          "text":  "Did you enjoy the last game of the CF Rockets?",
+          "text": "text",
           "quick_replies": [
             {
-              "title":"Loved it!",
-              "block_names": ["Block 1", "Block 2"]
+              "title": "Number 1",
+              "set_attributes": {
+                "number": "1"
+              }
             },
             {
-              "title":"Not really...",
-              "url": "https://rockets.chatfuel.com/api/sad-match",
-              "type":"json_plugin_url"
+              "title": "Number 2",
+              "set_attributes": {
+                "number": `2 ${console.log(222)}`
+              }
             }
-          ]
+          ],
+          "quick_reply_options": {
+            "process_text_by_ai": false,
+            "text_attribute_name": "user_message"
+          }
         }
       ]
     }
