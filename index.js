@@ -55,5 +55,7 @@ app.post('/cadastro', function(req, res){
       ]
    }
   );
+
+  console.log(clientes);
   
 });
